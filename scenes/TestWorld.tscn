@@ -1,19 +1,38 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Walk.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 3.0
+height = 4.0
 
 [node name="World" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 1, 1 )
+position = Vector2( 344, 320 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 57, 56 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, 24.859 )
+rotation = -1.5708
+scale = Vector2( 5, 5 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 33, 19 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 103, 21, 103, 21, 87, 133, 71, 317, 55, 389, 55, 461, 199, 429, 327, 485, 567, 413, 783, 509, 951, 453, 823, 261, 783, 109, 751, 69, 767, -19, 991, -19, 991, 581, -33, 581, -33, -19, 95, -19 )
