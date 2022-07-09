@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="OGAGameJam"
-run/main_scene="res://scenes/TestWorld.tscn"
+run/main_scene="res://test/scenes/testWorld/TestWorld.tscn"
 config/icon="res://icon.png"
 
 [input]
