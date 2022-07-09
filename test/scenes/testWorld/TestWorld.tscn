@@ -11,13 +11,17 @@
 position = Vector2( 33, 19 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 224, 72 )
+position = Vector2( 464, 80 )
+scale = Vector2( 5, 5 )
 
 [node name="Bush" parent="." instance=ExtResource( 1 )]
-position = Vector2( 56, 64 )
+position = Vector2( 64, 72 )
+scale = Vector2( 5, 5 )
 
 [node name="Bush2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 72 )
+position = Vector2( 376, 248 )
+scale = Vector2( 5, 5 )
 
 [node name="Bush3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 72 )
+position = Vector2( 720, 240 )
+scale = Vector2( 5, 5 )
