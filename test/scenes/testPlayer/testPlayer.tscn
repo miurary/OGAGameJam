@@ -3,13 +3,11 @@
 [ext_resource path="res://test/scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Walk.png" type="Texture" id=2]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.0
 height = 4.0
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "IdleDown"
 length = 0.1
 loop = true
@@ -26,7 +24,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "IdleLeft"
 length = 0.1
 loop = true
@@ -43,7 +41,7 @@ tracks/0/keys = {
 "values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "IdleRight"
 length = 0.1
 loop = true
@@ -60,7 +58,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "IdleUp"
 length = 0.1
 loop = true
@@ -77,7 +75,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -92,7 +90,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "RunDown"
 length = 0.5
 loop = true
@@ -109,7 +107,7 @@ tracks/0/keys = {
 "values": [ 0, 4, 8, 12, 0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "RunLeft"
 length = 0.5
 loop = true
@@ -126,8 +124,7 @@ tracks/0/keys = {
 "values": [ 6, 6, 10, 14, 10 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "RunRight"
+[sub_resource type="Animation" id=9]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -228,9 +225,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-hframes = 4
 vframes = 4
-frame = 3
+hframes = 4
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
@@ -238,14 +235,14 @@ rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/IdleDown = SubResource( 4 )
-anims/IdleLeft = SubResource( 5 )
-anims/IdleRight = SubResource( 6 )
-anims/IdleUp = SubResource( 7 )
-anims/RESET = SubResource( 2 )
-anims/RunDown = SubResource( 8 )
-anims/RunLeft = SubResource( 9 )
-anims/RunRight = SubResource( 3 )
+anims/IdleDown = SubResource( 2 )
+anims/IdleLeft = SubResource( 3 )
+anims/IdleRight = SubResource( 4 )
+anims/IdleUp = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+anims/RunDown = SubResource( 7 )
+anims/RunLeft = SubResource( 8 )
+anims/RunRight = SubResource( 9 )
 anims/RunUp = SubResource( 10 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
