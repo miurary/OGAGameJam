@@ -73,4 +73,7 @@ func jumpAnimationFinished():
 
 func move():
 	velocity = move_and_slide(velocity)
-#end func _physics_process
+
+func _on_Hurtbox_area_entered(area):
+	print("hurtbox entered")
+	print(area)
