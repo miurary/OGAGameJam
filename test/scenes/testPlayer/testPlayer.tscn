@@ -3,6 +3,8 @@
 [ext_resource path="res://test/scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Walk.png" type="Texture" id=2]
 
+
+
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.0
 height = 4.0

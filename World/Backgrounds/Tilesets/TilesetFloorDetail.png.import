@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilesetElement.png-11f8413946753e32fb2de436ba8f21df.stex"
+path="res://.import/TilesetFloorDetail.png-e77411e25b38a9dcef4b676207ccc6b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Backgrounds/Tilesets/TilesetElement.png"
-dest_files=[ "res://.import/TilesetElement.png-11f8413946753e32fb2de436ba8f21df.stex" ]
+source_file="res://World/Backgrounds/Tilesets/TilesetFloorDetail.png"
+dest_files=[ "res://.import/TilesetFloorDetail.png-e77411e25b38a9dcef4b676207ccc6b9.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

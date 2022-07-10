@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TilesetNature.png-25b479e1ce1ae0d3aea4131469d2ac37.stex"
+path="res://.import/TopSheet16x16.png-bad73e5d51c63f7f2abd530c9a49d8de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Backgrounds/Tilesets/TilesetNature.png"
-dest_files=[ "res://.import/TilesetNature.png-25b479e1ce1ae0d3aea4131469d2ac37.stex" ]
+source_file="res://World/Backgrounds/Animated/Waterfall/TopSheet16x16.png"
+dest_files=[ "res://.import/TopSheet16x16.png-bad73e5d51c63f7f2abd530c9a49d8de.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SpriteSheet16x16.png-248a2c8b5806cb430e6aec0457e5a364.stex"
+path="res://.import/TilesetElement.png-4e4eeca05ebe2ac667b645ecb18c480c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Backgrounds/Animated/Plant/SpriteSheet16x16.png"
-dest_files=[ "res://.import/SpriteSheet16x16.png-248a2c8b5806cb430e6aec0457e5a364.stex" ]
+source_file="res://World/Backgrounds/Tilesets/TilesetElement.png"
+dest_files=[ "res://.import/TilesetElement.png-4e4eeca05ebe2ac667b645ecb18c480c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
