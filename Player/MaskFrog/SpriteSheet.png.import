@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Item.png-fc3790d872b83ef6afc5fa951af95921.stex"
+path="res://.import/SpriteSheet.png-c49ccd33ad2a3b3cc8ce1f59895642ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Item.png"
-dest_files=[ "res://.import/Item.png-fc3790d872b83ef6afc5fa951af95921.stex" ]
+source_file="res://Player/MaskFrog/SpriteSheet.png"
+dest_files=[ "res://.import/SpriteSheet.png-c49ccd33ad2a3b3cc8ce1f59895642ac.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

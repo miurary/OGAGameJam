@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Attack.png-bbdc4414f45cf7139f383ec6060c30f8.stex"
+path="res://.import/Walk.png-c2d17550e758451fd35de92e3cccb194.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Attack.png"
-dest_files=[ "res://.import/Attack.png-bbdc4414f45cf7139f383ec6060c30f8.stex" ]
+source_file="res://Player/MaskFrog/SeparateAnim/Walk.png"
+dest_files=[ "res://.import/Walk.png-c2d17550e758451fd35de92e3cccb194.stex" ]
 
 [params]
 

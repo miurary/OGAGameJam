@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Faceset.png-4756b174d8b339265fc488a7696f20b8.stex"
+path="res://.import/Faceset.png-ebbbe229d61ac1f4de58dfe916cb9981.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/Faceset.png"
-dest_files=[ "res://.import/Faceset.png-4756b174d8b339265fc488a7696f20b8.stex" ]
+source_file="res://Player/MaskFrog/Faceset.png"
+dest_files=[ "res://.import/Faceset.png-ebbbe229d61ac1f4de58dfe916cb9981.stex" ]
 
 [params]
 

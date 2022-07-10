@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle.png-522ab8aa014e633fffe3998e66734064.stex"
+path="res://.import/Attack.png-0957c4e0179a7473367397c73597dd2c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Idle.png"
-dest_files=[ "res://.import/Idle.png-522ab8aa014e633fffe3998e66734064.stex" ]
+source_file="res://Player/MaskFrog/SeparateAnim/Attack.png"
+dest_files=[ "res://.import/Attack.png-0957c4e0179a7473367397c73597dd2c.stex" ]
 
 [params]
 

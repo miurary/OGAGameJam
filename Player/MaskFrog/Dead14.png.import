@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Walk.png-5119cad10b0c69835ad846f53dceba0f.stex"
+path="res://.import/Dead14.png-b45b47fa8743f7b2a3f5682ce2319a59.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Walk.png"
-dest_files=[ "res://.import/Walk.png-5119cad10b0c69835ad846f53dceba0f.stex" ]
+source_file="res://Player/MaskFrog/Dead14.png"
+dest_files=[ "res://.import/Dead14.png-b45b47fa8743f7b2a3f5682ce2319a59.stex" ]
 
 [params]
 

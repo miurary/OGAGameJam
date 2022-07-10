@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Special1.png-52749e4032999e1245ad375df22155a1.stex"
+path="res://.import/Special2.png-520f2c01a101b8dcf8098d83d546c9f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Characters/MaskFrog/SeparateAnim/Special1.png"
-dest_files=[ "res://.import/Special1.png-52749e4032999e1245ad375df22155a1.stex" ]
+source_file="res://Player/MaskFrog/SeparateAnim/Special2.png"
+dest_files=[ "res://.import/Special2.png-520f2c01a101b8dcf8098d83d546c9f1.stex" ]
 
 [params]
 
