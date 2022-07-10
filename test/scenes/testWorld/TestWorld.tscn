@@ -164,10 +164,8 @@ position = Vector2( 720, 240 )
 [node name="Flag" type="AnimatedSprite" parent="."]
 position = Vector2( 78.4738, -16.856 )
 frames = SubResource( 8 )
-frame = 2
 playing = true
 
 [node name="Flower" type="AnimatedSprite" parent="."]
 frames = SubResource( 11 )
-frame = 1
 playing = true
