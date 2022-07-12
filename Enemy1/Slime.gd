@@ -11,7 +11,9 @@ const MAXSPEED = 100
 const FRICTION = 200
 const WANDERTARGETRANGE = 4
 
+onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
+onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 
@@ -78,3 +80,15 @@ func accelerateTowardsPoint(position, delta):
 	var direction = global_position.direction_to(position)
 	velocity = velocity.move_towards(direction * MAXSPEED, ACCELERATION * delta)
 	#handle sprite here
+
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= area.damage
+	knockback = area.knockbackVector * 120
+	hurtbox.startInvincibility(0.4)
+
+
+func _on_Stats_noHealth():
+	queue_free()
+	emit_signal("death", name)
+	#handle death effects
