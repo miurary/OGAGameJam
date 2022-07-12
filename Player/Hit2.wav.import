@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Hit2.wav-65edda7810bef0c56f4293425caa6dc2.sample"
+path="res://.import/Hit2.wav-622d04fe81ea6575f662b93ddd765878.sample"
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Sounds/Game/Hit2.wav"
-dest_files=[ "res://.import/Hit2.wav-65edda7810bef0c56f4293425caa6dc2.sample" ]
+source_file="res://Player/Hit2.wav"
+dest_files=[ "res://.import/Hit2.wav-622d04fe81ea6575f662b93ddd765878.sample" ]
 
 [params]
 

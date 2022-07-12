@@ -3,7 +3,8 @@ extends KinematicBody2D
 enum {
 	MOVE,
 	ATTACK,
-	JUMP
+	JUMP,
+	FALL
 }
 
 const ACCELERATION = 500
@@ -29,6 +30,8 @@ func _physics_process(delta):
 			attackState()
 		JUMP:
 			jumpState()
+		FALL:
+			fallState()
 	
 	
 func moveState(delta):
@@ -70,10 +73,25 @@ func jumpState():
 func jumpAnimationFinished():
 	state = MOVE
 	velocity = velocity * .75
-
+	
+func fallState():
+	velocity = Vector2.ZERO
+	animationState.travel("Falling")
+	pass
+	
+func fallAnimationFinished():
+	pass
+	
 func move():
 	velocity = move_and_slide(velocity)
 
-func _on_Hurtbox_area_entered(area):
-	print("hurtbox entered")
-	print(area)
+func _on_Hole_area_entered(area):
+	print("hole area entered by...", area.name)
+	
+	if state == JUMP:
+		print("jumping!")
+	else:
+		print("Falling...")
+		state = FALL
+		
+		

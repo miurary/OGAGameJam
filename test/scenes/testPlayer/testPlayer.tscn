@@ -1,8 +1,9 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://test/scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/MaskFrog/SpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Hit2.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.0
@@ -126,6 +127,60 @@ tracks/1/keys = {
 "args": [  ],
 "method": "attackAnimationFinished"
 } ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "Falling"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.25, 0.25 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0784314, 0.105882, 0.105882, 1 ) ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=6]
@@ -414,6 +469,9 @@ blend_point_3/node = SubResource( 22 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=49]
+animation = "Falling"
+
 [sub_resource type="AnimationNodeAnimation" id=24]
 animation = "IdleLeft"
 
@@ -494,16 +552,22 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=44]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+
 [sub_resource type="AnimationNodeStateMachine" id=45]
 states/Attack/node = SubResource( 23 )
-states/Attack/position = Vector2( 496, 203 )
+states/Attack/position = Vector2( 289, 253 )
+states/Falling/node = SubResource( 49 )
+states/Falling/position = Vector2( 607, 44 )
 states/Idle/node = SubResource( 28 )
-states/Idle/position = Vector2( 496, 91 )
+states/Idle/position = Vector2( 461, 144 )
 states/Jump/node = SubResource( 33 )
-states/Jump/position = Vector2( 308, 91 )
+states/Jump/position = Vector2( 139, 134 )
 states/Run/node = SubResource( 38 )
-states/Run/position = Vector2( 684, 91 )
-transitions = [ "Idle", "Run", SubResource( 39 ), "Run", "Idle", SubResource( 40 ), "Idle", "Attack", SubResource( 41 ), "Attack", "Idle", SubResource( 42 ), "Jump", "Idle", SubResource( 43 ), "Idle", "Jump", SubResource( 44 ) ]
+states/Run/position = Vector2( 686, 242 )
+transitions = [ "Idle", "Run", SubResource( 39 ), "Run", "Idle", SubResource( 40 ), "Idle", "Attack", SubResource( 41 ), "Attack", "Idle", SubResource( 42 ), "Jump", "Idle", SubResource( 43 ), "Idle", "Jump", SubResource( 44 ), "Idle", "Falling", SubResource( 50 ), "Falling", "Idle", SubResource( 51 ) ]
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=46]
@@ -513,7 +577,7 @@ radius = 3.99616
 height = 1.07509
 
 [node name="Player" type="KinematicBody2D"]
-collision_mask = 2
+collision_mask = 0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -523,6 +587,7 @@ __meta__ = {
 texture = ExtResource( 2 )
 vframes = 7
 hframes = 4
+frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
@@ -534,6 +599,7 @@ anims/AttackDown = SubResource( 2 )
 anims/AttackLeft = SubResource( 3 )
 anims/AttackRight = SubResource( 4 )
 anims/AttackUp = SubResource( 5 )
+anims/Falling = SubResource( 48 )
 anims/IdleDown = SubResource( 6 )
 anims/IdleLeft = SubResource( 7 )
 anims/IdleRight = SubResource( 8 )
@@ -558,13 +624,15 @@ parameters/Jump/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
-collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( -0.210224, 3.25848 )
 scale = Vector2( 1.32, 1 )
 shape = SubResource( 47 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
