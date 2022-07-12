@@ -14,6 +14,7 @@ const FRICTION = 1000
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var jumpBox = $Hurtbox
 onready var restartButton = $RestartButton
 onready var sprite = $Sprite
 onready var timer = $DeathTimer
@@ -71,10 +72,12 @@ func attackAnimationFinished():
 	state = MOVE
 
 func jumpState():
+	jumpBox.monitorable = false
 	animationState.travel("Jump")
 	move()
 	
 func jumpAnimationFinished():
+	jumpBox.monitorable = true
 	state = MOVE
 	velocity = velocity * .75
 	
@@ -95,14 +98,8 @@ func move():
 
 func _on_Hole_area_entered(area):
 	print("hole area entered by...", area.name)
-	
-	if state == JUMP:
-		print("jumping!")
-	else:
-		print("Falling...")
-		state = FALL
-		
-		
+	print("Falling...")
+	state = FALL
 
 func _on_RestartButton_pressed():
 	get_tree().reload_current_scene()
