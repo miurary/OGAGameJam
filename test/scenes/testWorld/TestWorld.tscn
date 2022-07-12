@@ -113,7 +113,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 20.7944, 19.5725 )
+extents = Vector2( 14.5518, 14.2878 )
 
 [node name="World" type="Node2D"]
 __meta__ = {
@@ -174,7 +174,7 @@ position = Vector2( 720, 240 )
 [node name="Flag" type="AnimatedSprite" parent="."]
 position = Vector2( 78.4738, -16.856 )
 frames = SubResource( 18 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Flower" type="AnimatedSprite" parent="."]

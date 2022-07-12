@@ -14,12 +14,16 @@ const FRICTION = 1000
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var restartButton = $RestartButton
+onready var sprite = $Sprite
+onready var timer = $DeathTimer
 
 var state = MOVE
 var velocity = Vector2.ZERO
 
 func _ready():
 	animationTree.active = true
+	restartButton.visible = false
 	print("Player ready function finished")
 
 func _physics_process(delta):
@@ -80,7 +84,11 @@ func fallState():
 	pass
 	
 func fallAnimationFinished():
-	pass
+	state = MOVE
+	sprite.visible = false
+	print("starting timer...")
+	timer.start(0.6)
+	
 	
 func move():
 	velocity = move_and_slide(velocity)
@@ -95,3 +103,10 @@ func _on_Hole_area_entered(area):
 		state = FALL
 		
 		
+
+func _on_RestartButton_pressed():
+	get_tree().reload_current_scene()
+
+
+func _on_DeathTimer_timeout():
+	restartButton.visible = true
