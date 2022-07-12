@@ -65,6 +65,18 @@ tracks/3/keys = {
 "method": "spawnAttack"
 } ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.01, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackLeft"
@@ -120,6 +132,18 @@ tracks/3/keys = {
 "args": [  ],
 "method": "spawnAttack"
 } ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.01, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -177,6 +201,18 @@ tracks/3/keys = {
 "method": "spawnAttack"
 } ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.01, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "AttackUp"
@@ -232,6 +268,18 @@ tracks/3/keys = {
 "args": [  ],
 "method": "spawnAttack"
 } ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.01, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -704,7 +752,7 @@ __meta__ = {
 texture = ExtResource( 2 )
 vframes = 7
 hframes = 4
-frame = 17
+frame = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
@@ -749,14 +797,15 @@ scale = Vector2( 1.32, 1 )
 shape = SubResource( 51 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-rotation = 3.14159
+rotation = 4.71239
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
-position = Vector2( 0, 10.3181 )
+position = Vector2( 0, 16.4294 )
 scale = Vector2( 0.661385, 0.446424 )
 shape = SubResource( 52 )
+disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
