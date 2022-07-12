@@ -1,9 +1,10 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://test/scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/MaskFrog/SpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Hit2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Player/Hitbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.0
@@ -38,6 +39,32 @@ tracks/1/keys = {
 "method": "attackAnimationFinished"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.01 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawnAttack"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackLeft"
@@ -66,6 +93,32 @@ tracks/1/keys = {
 "values": [ {
 "args": [  ],
 "method": "attackAnimationFinished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.01 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawnAttack"
 } ]
 }
 
@@ -98,6 +151,32 @@ tracks/1/keys = {
 "method": "attackAnimationFinished"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 270.0 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.01 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawnAttack"
+} ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "AttackUp"
@@ -126,6 +205,32 @@ tracks/1/keys = {
 "values": [ {
 "args": [  ],
 "method": "attackAnimationFinished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.01 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawnAttack"
 } ]
 }
 
@@ -586,6 +691,8 @@ start_node = "Idle"
 radius = 3.99616
 height = 1.07509
 
+[sub_resource type="CapsuleShape2D" id=52]
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 0
 script = ExtResource( 1 )
@@ -597,7 +704,7 @@ __meta__ = {
 texture = ExtResource( 2 )
 vframes = 7
 hframes = 4
-frame = 25
+frame = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
@@ -641,12 +748,23 @@ position = Vector2( -0.210224, 3.25848 )
 scale = Vector2( 1.32, 1 )
 shape = SubResource( 51 )
 
+[node name="HitboxPivot" type="Position2D" parent="."]
+rotation = 3.14159
+
+[node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
+position = Vector2( 0, 10.3181 )
+scale = Vector2( 0.661385, 0.446424 )
+shape = SubResource( 52 )
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
 [node name="DeathTimer" type="Timer" parent="."]
 
 [node name="RestartButton" type="Button" parent="."]
+visible = false
 margin_left = -30.7592
 margin_top = -9.89949
 margin_right = 26.2408
@@ -660,3 +778,5 @@ __meta__ = {
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 
 [editable path="Hurtbox"]
+
+[editable path="HitboxPivot/Hitbox"]

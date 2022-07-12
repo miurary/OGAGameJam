@@ -11,13 +11,18 @@ const ACCELERATION = 500
 const MAX_SPEED = 200
 const FRICTION = 1000
 
+const AttackEffect = preload("res://Player/Slash/AttackEffect.tscn")
+
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var jumpBox = $Hurtbox
+onready var attackSpawn = $HitboxPivot/Hitbox/CollisionShape2D
 onready var restartButton = $RestartButton
 onready var sprite = $Sprite
 onready var timer = $DeathTimer
+
+export var attackOffset = 40
 
 var state = MOVE
 var velocity = Vector2.ZERO
@@ -67,6 +72,11 @@ func moveState(delta):
 func attackState():
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
+	
+func spawnAttack():
+	var attackEffect = AttackEffect.instance()
+	get_parent().add_child(attackEffect)
+	attackEffect.global_position = attackSpawn.global_position
 	
 func attackAnimationFinished():
 	state = MOVE
