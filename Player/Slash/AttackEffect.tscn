@@ -31,9 +31,10 @@ animations = [ {
 [node name="AttackEffect" type="AnimatedSprite"]
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 script = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+autoplay = true

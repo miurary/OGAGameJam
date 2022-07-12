@@ -802,8 +802,8 @@ rotation = 4.71239
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
-position = Vector2( 0, 16.4294 )
-scale = Vector2( 0.661385, 0.446424 )
+position = Vector2( 0, 18.8251 )
+scale = Vector2( 0.861385, 0.606424 )
 shape = SubResource( 52 )
 disabled = true
 
