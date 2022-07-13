@@ -92,6 +92,7 @@ jump={
 2d_physics/layer_5="SoftCollisions"
 2d_physics/layer_6="Enemy"
 2d_physics/layer_7="EnemyHurtbox"
+2d_physics/layer_8="Walls"
 
 [rendering]
 
