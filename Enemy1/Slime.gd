@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal death(value)
+
 enum {
 	IDLE,
 	WANDER,
@@ -78,11 +80,12 @@ func chaseState(delta):
 		
 func accelerateTowardsPoint(position, delta):
 	var direction = global_position.direction_to(position)
-	velocity = velocity.move_towards(direction * MAXSPEED, ACCELERATION * delta)
+	velocity = velocity.move_toward(direction * MAXSPEED, ACCELERATION * delta)
 	#handle sprite here
 
 
 func _on_Hurtbox_area_entered(area):
+	print("slime damaged")
 	stats.health -= area.damage
 	knockback = area.knockbackVector * 120
 	hurtbox.startInvincibility(0.4)

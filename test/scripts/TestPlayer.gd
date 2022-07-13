@@ -19,6 +19,7 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var jumpBox = $Hurtbox
 onready var attackSpawn = $HitboxPivot/Hitbox/CollisionShape2D
 onready var restartButton = $RestartButton
+onready var hurtbox = $Hurtbox
 onready var sprite = $Sprite
 onready var timer = $DeathTimer
 
@@ -26,6 +27,7 @@ export var attackOffset = 40
 
 var state = MOVE
 var velocity = Vector2.ZERO
+var stats = PlayerStats
 
 func _ready():
 	animationTree.active = true
@@ -106,14 +108,18 @@ func fallAnimationFinished():
 func move():
 	velocity = move_and_slide(velocity)
 
-func _on_Hole_area_entered(area):
-	print("hole area entered by...", area.name)
-	print("Falling...")
-	state = FALL
-
 func _on_RestartButton_pressed():
 	get_tree().reload_current_scene()
 
 
 func _on_DeathTimer_timeout():
 	restartButton.visible = true
+
+func _on_Hurtbox_area_entered(area):
+	if area.isHole:
+		print("falling!")
+		state = FALL
+	else:
+		print("taking damage!")
+		stats.health -= area.damage
+		hurtbox.startInvincibility(0.6)
