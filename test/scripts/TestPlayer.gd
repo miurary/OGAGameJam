@@ -116,7 +116,9 @@ func _on_DeathTimer_timeout():
 	restartButton.visible = true
 
 func _on_Hurtbox_area_entered(area):
-	if area.isHole:
+	if area.isBoundary:
+		pass
+	elif area.isHole:
 		print("falling!")
 		state = FALL
 	else:
