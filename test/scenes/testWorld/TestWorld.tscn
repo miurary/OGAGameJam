@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://test/scenes/testWorld/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://test/scenes/testPlayer/testPlayer.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://World/Backgrounds/Animated/Flower/SpriteSheet16x16.png" type="Texture" id=5]
 [ext_resource path="res://World/Backgrounds/Tilesets/TilesetHole.png" type="Texture" id=6]
 [ext_resource path="res://test/scenes/testWorld/Hole.gd" type="Script" id=7]
+[ext_resource path="res://test/scenes/testEnemy/testEnemy1/NE1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=11]
 0/name = "TilesetHole.png 0"
@@ -174,7 +175,7 @@ position = Vector2( 720, 240 )
 [node name="Flag" type="AnimatedSprite" parent="."]
 position = Vector2( 78.4738, -16.856 )
 frames = SubResource( 18 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Flower" type="AnimatedSprite" parent="."]
@@ -190,4 +191,8 @@ script = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
 position = Vector2( 488.022, 442.088 )
 shape = SubResource( 22 )
+
+[node name="NE1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 384, 416 )
+
 [connection signal="area_entered" from="Hole" to="Player" method="_on_Hole_area_entered"]
