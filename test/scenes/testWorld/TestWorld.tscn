@@ -174,12 +174,10 @@ position = Vector2( 720, 240 )
 [node name="Flag" type="AnimatedSprite" parent="."]
 position = Vector2( 78.4738, -16.856 )
 frames = SubResource( 18 )
-frame = 3
 playing = true
 
 [node name="Flower" type="AnimatedSprite" parent="."]
 frames = SubResource( 21 )
-frame = 1
 playing = true
 
 [node name="Hole" type="Area2D" parent="."]
@@ -190,4 +188,5 @@ script = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
 position = Vector2( 488.022, 442.088 )
 shape = SubResource( 22 )
+
 [connection signal="area_entered" from="Hole" to="Player" method="_on_Hole_area_entered"]

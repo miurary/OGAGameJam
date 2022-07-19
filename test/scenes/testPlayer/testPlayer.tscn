@@ -1,9 +1,10 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://test/scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/MaskFrog/SpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Hit2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Player/Hitbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.0
@@ -38,6 +39,30 @@ tracks/1/keys = {
 "method": "attackAnimationFinished"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("FistHitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FistHitboxPivot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 8 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackLeft"
@@ -67,6 +92,30 @@ tracks/1/keys = {
 "args": [  ],
 "method": "attackAnimationFinished"
 } ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FistHitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FistHitboxPivot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -8, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -98,6 +147,30 @@ tracks/1/keys = {
 "method": "attackAnimationFinished"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("FistHitboxPivot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FistHitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "AttackUp"
@@ -127,6 +200,30 @@ tracks/1/keys = {
 "args": [  ],
 "method": "attackAnimationFinished"
 } ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FistHitboxPivot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -8 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FistHitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=48]
@@ -395,6 +492,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 3 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("FistHitboxPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 16 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FistHitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=15]
 length = 0.5
@@ -590,6 +711,10 @@ start_node = "Idle"
 radius = 3.99616
 height = 1.07509
 
+[sub_resource type="CapsuleShape2D" id=52]
+radius = 8.0
+height = 0.0
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 0
 script = ExtResource( 1 )
@@ -599,9 +724,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-vframes = 7
 hframes = 4
-frame = 25
+vframes = 7
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
@@ -651,6 +776,7 @@ stream = ExtResource( 4 )
 [node name="DeathTimer" type="Timer" parent="."]
 
 [node name="RestartButton" type="Button" parent="."]
+visible = false
 margin_left = -30.7592
 margin_top = -9.89949
 margin_right = 26.2408
@@ -659,8 +785,19 @@ text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FistHitboxPivot" type="Position2D" parent="."]
+position = Vector2( 0, 16 )
+
+[node name="Hitbox" parent="FistHitboxPivot" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="FistHitboxPivot/Hitbox" index="0"]
+shape = SubResource( 52 )
+disabled = true
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 
 [editable path="Hurtbox"]
+[editable path="FistHitboxPivot/Hitbox"]
