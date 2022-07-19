@@ -790,6 +790,7 @@ __meta__ = {
 position = Vector2( 0, 16 )
 
 [node name="Hitbox" parent="FistHitboxPivot" instance=ExtResource( 5 )]
+collision_layer = 1
 
 [node name="CollisionShape2D" parent="FistHitboxPivot/Hitbox" index="0"]
 shape = SubResource( 52 )
