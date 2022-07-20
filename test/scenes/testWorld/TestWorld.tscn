@@ -6,6 +6,7 @@
 [ext_resource path="res://test/scenes/testWorld/Camera.gd" type="Script" id=4]
 [ext_resource path="res://test/scenes/testWorld/LRCamTran.gd" type="Script" id=5]
 [ext_resource path="res://World/Backgrounds/Tilesets/TilesetHole.png" type="Texture" id=6]
+
 [ext_resource path="res://Player/Hitbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemy1/Slime.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Backgrounds/Tilesets/TilesetNature.png" type="Texture" id=9]
@@ -137,6 +138,8 @@ points = PoolVector2Array( 64, 48, 0.266968, 48, 0.266968, 0.663589, 64, 0.66358
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
+[ext_resource path="res://test/scenes/testWorld/Hole.gd" type="Script" id=7]
+[ext_resource path="res://test/scenes/testEnemy/testEnemy1/NE1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=11]
 0/name = "TilesetHole.png 0"
@@ -312,3 +315,4 @@ shape = SubResource( 16 )
 [connection signal="updateCamera" from="UDCamTran" to="Camera" method="_on_UDCamTran_updateCamera"]
 
 [editable path="Hole"]
+
