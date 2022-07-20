@@ -1,10 +1,11 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://test/scripts/TestPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/MaskFrog/SpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Hit2.wav" type="AudioStream" id=4]
 [ext_resource path="res://Player/Hitbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/MaskFrog/playerHurt.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.0
@@ -350,6 +351,22 @@ tracks/4/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=53]
+resource_name = "Hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
 [sub_resource type="Animation" id=7]
 length = 0.1
 loop = true
@@ -543,6 +560,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -750,8 +779,13 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-vframes = 7
 hframes = 4
+vframes = 7
+frame = 3
+
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
@@ -764,6 +798,7 @@ anims/AttackLeft = SubResource( 3 )
 anims/AttackRight = SubResource( 4 )
 anims/AttackUp = SubResource( 5 )
 anims/Falling = SubResource( 6 )
+anims/Hurt = SubResource( 53 )
 anims/IdleDown = SubResource( 7 )
 anims/IdleLeft = SubResource( 8 )
 anims/IdleRight = SubResource( 9 )
@@ -796,7 +831,7 @@ scale = Vector2( 1.32, 1 )
 shape = SubResource( 51 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-rotation = 4.71239
+rotation = 3.14159
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 5 )]
 collision_layer = 0
@@ -823,10 +858,10 @@ text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 
 [editable path="Hurtbox"]
-
 [editable path="HitboxPivot/Hitbox"]
