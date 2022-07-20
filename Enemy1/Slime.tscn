@@ -76,14 +76,12 @@ shape = SubResource( 6 )
 
 [node name="Stats" parent="." instance=ExtResource( 8 )]
 maxHealth = 3
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibilityStarted" from="Hurtbox" to="." method="_on_Hurtbox_invincibilityStarted"]
 [connection signal="noHealth" from="Stats" to="." method="_on_Stats_noHealth"]
 
 [editable path="Hurtbox"]
-
 [editable path="SoftCollision"]
-
 [editable path="PlayerDetectionZone"]
-
 [editable path="Hitbox"]

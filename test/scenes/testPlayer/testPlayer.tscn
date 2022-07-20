@@ -784,6 +784,7 @@ vframes = 7
 frame = 3
 
 [node name="Sprite2" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 6 )
 hframes = 3
 
