@@ -18,10 +18,6 @@ config/name="OGAGameJam"
 run/main_scene="res://test/scenes/testWorld/TestWorld.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-PlayerStats="*res://Player/PlayerStats.tscn"
-
 [importer_defaults]
 
 texture={
@@ -88,10 +84,8 @@ jump={
 2d_physics/layer_2="Objects"
 2d_physics/layer_3="PlayerHurtbox"
 2d_physics/layer_4="Holes"
-2d_physics/layer_5="SoftCollisions"
+2d_physics/layer_5="EnemyHurtbox"
 2d_physics/layer_6="Enemy"
-2d_physics/layer_7="EnemyHurtbox"
-2d_physics/layer_8="Walls"
 
 [rendering]
 

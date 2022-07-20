@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Sword.wav-f4cc5ba795ae4029119b35bffba1402e.sample"
+path="res://.import/Sword.wav-36425e5f795d4dee7f3b46980fbae46c.sample"
 
 [deps]
 
-source_file="res://Player/Slash/Sword.wav"
-dest_files=[ "res://.import/Sword.wav-f4cc5ba795ae4029119b35bffba1402e.sample" ]
+source_file="res://assets/NinjaAdventure/Sounds/Game/Sword.wav"
+dest_files=[ "res://.import/Sword.wav-36425e5f795d4dee7f3b46980fbae46c.sample" ]
 
 [params]
 

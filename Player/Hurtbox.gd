@@ -1,31 +1,11 @@
 extends Area2D
 
-signal invincibilityStarted
-signal invincibilityEnded
 
-onready var timer = $Timer
-onready var collisionShape = $CollisionShape2D
-
-var invincible = false setget setInvincible
-
-func setInvincible(value):
-	invincible = value
-	if invincible == true:
-		emit_signal("invincibilityStarted")
-	else:
-		emit_signal("invincibilityEnded")
-		
-func startInvincibility(duration):
-	self.invincible = true
-	timer.start(duration)
-	
-func _on_Timer_timeout():
-	self.invincible = false
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
 
 
-func _on_Hurtbox_invincibilityStarted():
-	collisionShape.set_deferred("disabled", true)
-
-
-func _on_Hurtbox_invincibilityEnded():
-	collisionShape.disabled = false
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
