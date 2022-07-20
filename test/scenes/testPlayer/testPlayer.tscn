@@ -354,6 +354,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=53]
 resource_name = "Hurt"
 length = 0.3
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
@@ -761,6 +762,7 @@ states/Run/node = SubResource( 40 )
 states/Run/position = Vector2( 686, 242 )
 transitions = [ "Idle", "Run", SubResource( 41 ), "Run", "Idle", SubResource( 42 ), "Idle", "Attack", SubResource( 43 ), "Attack", "Idle", SubResource( 44 ), "Jump", "Idle", SubResource( 45 ), "Idle", "Jump", SubResource( 46 ), "Idle", "Falling", SubResource( 47 ), "Falling", "Idle", SubResource( 48 ) ]
 start_node = "Idle"
+graph_offset = Vector2( -68, 53 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=50]
 
@@ -832,7 +834,6 @@ scale = Vector2( 1.32, 1 )
 shape = SubResource( 51 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-rotation = 3.14159
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 5 )]
 collision_layer = 0
