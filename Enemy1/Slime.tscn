@@ -141,7 +141,7 @@ frame = 2
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 23 )
 animation = "SlimeDown"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -169,6 +169,7 @@ scale = Vector2( 0.72, 0.6 )
 shape = SubResource( 3 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource( 4 )
