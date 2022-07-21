@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slimeHurt.png-e8d45262cf999a7380152db4a97492c0.stex"
+path="res://.import/TilesetFloor.png-09839da24d6ea2175695003ffdcc730f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy1/slimeHurt.png"
-dest_files=[ "res://.import/slimeHurt.png-e8d45262cf999a7380152db4a97492c0.stex" ]
+source_file="res://World1/Backgrounds/Tilesets/TilesetFloor.png"
+dest_files=[ "res://.import/TilesetFloor.png-09839da24d6ea2175695003ffdcc730f.stex" ]
 
 [params]
 
