@@ -17,3 +17,12 @@ func _on_UDCamTran_updateCamera(value):
 		global_position.y += y
 	else:
 		global_position.y -= y
+
+
+func _on_BossCamTran_updateToBossCamera(value):
+	limit_left = -256
+	limit_right = 768
+	limit_top = -864
+	limit_bottom = -320
+	zoom.x *= 1.5
+	zoom.y *= 1.5
