@@ -12,3 +12,4 @@ func _on_BossCamTran_area_entered(area):
 		print(player.position)
 		emit_signal("updateToBossCamera", player.velocity.y)
 		print("signal emitted")
+		collision_layer = 7

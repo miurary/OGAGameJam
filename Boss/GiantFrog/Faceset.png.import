@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Faceset.png-d61e245984a496496d2e1ffd0f342821.stex"
+path="res://.import/Faceset.png-6b1e3d6126e97124b9b55f6734fa2f7f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Boss/GiantFrog/Faceset.png"
-dest_files=[ "res://.import/Faceset.png-d61e245984a496496d2e1ffd0f342821.stex" ]
+source_file="res://Boss/GiantFrog/Faceset.png"
+dest_files=[ "res://.import/Faceset.png-6b1e3d6126e97124b9b55f6734fa2f7f.stex" ]
 
 [params]
 

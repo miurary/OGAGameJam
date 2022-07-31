@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump.png-10f731da705650339d3f135437dddd7e.stex"
+path="res://.import/Charge.png-a019b94b5da380e27329bf2c33c46a92.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NinjaAdventure/Actor/Boss/GiantFrog/Jump.png"
-dest_files=[ "res://.import/Jump.png-10f731da705650339d3f135437dddd7e.stex" ]
+source_file="res://Boss/GiantFrog/Charge.png"
+dest_files=[ "res://.import/Charge.png-a019b94b5da380e27329bf2c33c46a92.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
